@@ -342,3 +342,27 @@ $$Y = \alpha \cdot \sin(X), \alpha = 0,0.1,0.2,...,3$$
 #...some super cool code.   
   
 ```
+
+## Afterward
+
+__Learn More__
+
+If you want to learn more about what's possible using rmarkdown sites (and there is a lot), a good starting place is [this document](http://rmarkdown.rstudio.com/rmarkdown_websites.html) hosted by RStudio. This is where I got almost everything for this. 
+
+__Style__
+
+This is rather personal, but as for the style: keep it as simple as possible. The simpler your website the less overwhelming it is to viewers. Try and convey everything that you need to and nothing more. That being said, personal flourishes do sometimes help set you apart from others. It's a balancing act. 
+
+__Questions__
+
+If this tutorial was confusing or you don't know what words to use to search for new stuff feel free to contact us. 
+
+- Nick
+    - n.strayer at vanderbilt.edu
+    - [twitter](https://twitter.com/NicholasStrayer)
+    - [github](https://github.com/nstrayer)
+- Lucy
+    - lucydagostino at gmail.com
+    - [twitter](https://twitter.com/LucyStats)
+    - [github](https://github.com/LucyMcGowan)
+
