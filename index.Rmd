@@ -1,6 +1,6 @@
 ---
 title: "How to make an RMarkdown Website"
-author: "Nick Strayer"
+author: "Nick Strayer & Lucy D'Agostino McGowan"
 date: "10/27/2016"
 output:
   html_document:
@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Setup: 
 
-Today, more than ever, a website is like a business card. As a graduate student or academic, by having a nice website you are not only providing a one-stop-shop for all of your necessary information, you are showing that you but you are savvy enough to know the importance of a high-quality web-presence, and lastly you are illustrating you have the technical prowess to accomplish this. 
+Today, more than ever, a website is like a business card. As a graduate student or academic, by having a nice website you are not only providing a one-stop-shop for all of your necessary information, you are showing that you are savvy enough to know the importance of a high-quality web-presence, and lastly you are illustrating that you have the technical prowess to accomplish this. 
 
 ## Prerequisits: 
 
@@ -66,15 +66,22 @@ Now open your terminal, navigate to the area where you want to story your websit
 ```{bash, eval = FALSE}
 git clone https://github.com/nstrayer/personal_site.git  #<- Replace this with your personal link. 
 ```
-
-Once all the cool looking stuff finishes running on your terminal we must make a new branch. This is the super secret step that allows you to host websites on github.
+There are two ways that allow you to host websites on github. One is to create a new branch called `gh-pages`, the other is to host in a folder called `docs`. Both of these are keywords that github recognizes, so the names are very important. We are going to use the latter method here.
 
 ```{bash, eval = FALSE}
 cd personal_site/  #<- Again, replace this with your own folder name
-git checkout -b gh-pages
+mkdir docs
 ```
 
-These commands navigate into your new repo, then make a new branch called `gh-pages` and enter it. This branch name is crucial so don't change it. It's what github looks for when deciding whether or not to host your site. 
+These commands navigate into your new repo, then make a new folder called `docs`. Again, this folder name is crutial so don't change it. It's what github looks for when deciding whether or not to host your site. 
+
+Now we need to let github know that this is how we plan to host our site. Navigate to your repository and click Settings on the top right.
+
+![](settings.png)
+
+Scroll down to the Github Pages section and click the drop down menu under "Source" and click "master branch /docs folder". 
+
+![](docs_folder.png)
 
 Okay good! Now we have a repo setup that allows us to host websites to it. Now let's actually get a website on it!
 
@@ -104,6 +111,7 @@ We will start by filling out the `yml` file. `yml` files, while confusing lookin
 ___site.yml__
 ```{r, eval = FALSE}
 name: "nicks-website"
+output_dir: "docs"
 navbar:
   title: "Nicks Website"
   left:
@@ -133,6 +141,7 @@ title: "About Me"
 Why I am awesome. 
 ```
 
+_If you got lost at any point during this tutorial, you can download a template of these files from [Lucy's github](https://github.com/LucyMcGowan/Example-RMarkdown-site)._
 
 ## Let's build it!
 
@@ -154,19 +163,13 @@ setwd("/Users/Nick/personal_site")
 
 #tender your sweet site. 
 rmarkdown::render_site()
-
-#this moves the rendered site back into the main level
-#of the repository. Ugly, but makes github easier.
-system("ditto _site/ .")
-#if this command does not work for you, simply open the _site
-#folder and copy all the files into the main level of your repo. 
 ```
 
 As a note, you could skip this step if you had started by creating an RStudio project, however, by doing it this way we are not dependent upon RStudio itself. This could be helpful if in the future you are doing this on a computer without RStudio. It also helps explain the process a little bit more. 
 
-Now if everything has gone according to plan, by running the code in `build_site.R` you should get a bunch of unintelligible output followed by the message : `Output created: _site/index.html`. If so, yay, if not, double check all the stuff above to make sure you followed it exactly. Or more likely I messed up and you should inform me. 
+Now if everything has gone according to plan, by running the code in `build_site.R` you should get a bunch of unintelligible output followed by the message : `Output created: docs/index.html`. If so, yay, if not, double check all the stuff above to make sure you followed it exactly. Or more likely I messed up and you should inform me. 
 
-Now we can open it up. Open the repository with `finder` or whatever tool your computer uses to look at files, then click on `index.html` and hopefully you should get something that looks like this. 
+Now we can open it up. Open the repository with `finder` or whatever tool your computer uses to look at files, go into the `docs` folder and then click on `index.html` and hopefully you should get something that looks like this. 
 
 ![](site_result.png)
 
@@ -245,6 +248,7 @@ Now just add the following lines to your `_site.yml` file to apply this css to y
 ___site.yml__
 ```{r, eval = FALSE}
 name: "nicks-website"
+output_dir: "docs"
 navbar:
   title: "Nicks Website"
   left:
@@ -362,7 +366,7 @@ If this tutorial was confusing or you don't know what words to use to search for
     - [twitter](https://twitter.com/NicholasStrayer)
     - [github](https://github.com/nstrayer)
 - Lucy
-    - lucydagostino at gmail.com
+    - ld.mcgowan at Vanderbilt.edu
     - [twitter](https://twitter.com/LucyStats)
     - [github](https://github.com/LucyMcGowan)
 
