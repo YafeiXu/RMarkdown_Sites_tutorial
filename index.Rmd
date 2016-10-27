@@ -66,20 +66,20 @@ Now open your terminal, navigate to the area where you want to story your websit
 ```{bash, eval = FALSE}
 git clone https://github.com/nstrayer/personal_site.git  #<- Replace this with your personal link. 
 ```
-There are two ways that allow you to host websites on github. One is to create a new branch called `gh-pages`, the other is to host in a folder called `docs`. Both of these are keywords that github recognizes, so the names are very important. We are going to use the latter method here.
+
+There are multiple ways to host websites on github. One is to create a new branch called `gh-pages`, the other is to tell github to manually tell github look in the master branch. We will do it the latter way. 
 
 ```{bash, eval = FALSE}
 cd personal_site/  #<- Again, replace this with your own folder name
-mkdir docs
 ```
 
-These commands navigate into your new repo, then make a new folder called `docs`. Again, this folder name is crutial so don't change it. It's what github looks for when deciding whether or not to host your site. 
+This navigates you into your new repo.
 
-Now we need to let github know that this is how we plan to host our site. Navigate to your repository and click Settings on the top right.
+Now we need to let github know that we want it to look for files to host in our master branch. Navigate to your repository and click Settings on the top right.
 
 ![](settings.png)
 
-Scroll down to the Github Pages section and click the drop down menu under "Source" and click "master branch /docs folder". 
+Scroll down to the Github Pages section and click the drop down menu under "Source" and click "master branch". 
 
 ![](docs_folder.png)
 
@@ -111,7 +111,7 @@ We will start by filling out the `yml` file. `yml` files, while confusing lookin
 ___site.yml__
 ```{r, eval = FALSE}
 name: "nicks-website"
-output_dir: "docs"
+output_dir: "."
 navbar:
   title: "Nicks Website"
   left:
@@ -167,9 +167,9 @@ rmarkdown::render_site()
 
 As a note, you could skip this step if you had started by creating an RStudio project, however, by doing it this way we are not dependent upon RStudio itself. This could be helpful if in the future you are doing this on a computer without RStudio. It also helps explain the process a little bit more. 
 
-Now if everything has gone according to plan, by running the code in `build_site.R` you should get a bunch of unintelligible output followed by the message : `Output created: docs/index.html`. If so, yay, if not, double check all the stuff above to make sure you followed it exactly. Or more likely I messed up and you should inform me. 
+Now if everything has gone according to plan, by running the code in `build_site.R` you should get a bunch of unintelligible output followed by the message : `Output created: index.html`. If so, yay, if not, double check all the stuff above to make sure you followed it exactly. Or more likely I messed up and you should inform me. 
 
-Now we can open it up. Open the repository with `finder` or whatever tool your computer uses to look at files, go into the `docs` folder and then click on `index.html` and hopefully you should get something that looks like this. 
+Now we can open it up. Open the repository with `finder` or whatever tool your computer uses to look at files then click on `index.html` and hopefully you should get something that looks like this. 
 
 ![](site_result.png)
 
@@ -248,7 +248,7 @@ Now just add the following lines to your `_site.yml` file to apply this css to y
 ___site.yml__
 ```{r, eval = FALSE}
 name: "nicks-website"
-output_dir: "docs"
+output_dir: "."
 navbar:
   title: "Nicks Website"
   left:
@@ -281,7 +281,7 @@ Again we edit the `_site.yml` file...
 ___site.yml__
 ```{r, eval = FALSE}
 name: "nicks-website"
-output_dir: "docs"
+output_dir: "."
 navbar:
   title: "Nicks Website"
   left:
@@ -299,7 +299,7 @@ output:
 
 Add another file called `projects.Rmd` (you know how to do this at this point). 
 
-___projects.Rmd__
+__projects.Rmd__
 
 ```{r, eval = FALSE}
 ---
@@ -344,8 +344,28 @@ __Look at how cool this plot is!__
 
 $$Y = \alpha \cdot \sin(X), \alpha = 0,0.1,0.2,...,3$$
 
-#...some super cool code.   
-  
+
+#remove backslashes before ticks to get this to work. 
+\`\`\`{r, echo = FALSE, fig.align='center'}
+library(tidyverse)
+cool_function <- function(x, alpha) return(sin(alpha*x))
+xs <- seq(0, pi*1.5, 0.005)
+ys <- cool_function(xs, 1)
+results <- data_frame(xs, ys, alpha = "1")
+for(alpha in seq(0,3, 0.1)){
+  results <- results %>% 
+    bind_rows(data_frame(
+      xs, 
+      ys = cool_function(xs, alpha),
+      alpha = as.character(alpha)
+    ))
+}
+
+ggplot(results, aes(x = xs, y = ys, color = alpha)) + 
+  geom_line() + 
+  theme_bw() + 
+  theme(legend.position="none")
+\`\`\`
 ```
 
 ## Afterward
