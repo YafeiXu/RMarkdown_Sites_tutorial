@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Setup: 
 
-Today, more than ever, a website is like a business card. As a graduate student or academic, by having a nice website you are not only providing a one-stop-shop for all of your neccesary information, you are showing that you but you are savy enough to know the importance of a high-quality web-presence, and lastly you are illustrating you have the technical prowess to accomplish this. 
+Today, more than ever, a website is like a business card. As a graduate student or academic, by having a nice website you are not only providing a one-stop-shop for all of your necessary information, you are showing that you but you are savvy enough to know the importance of a high-quality web-presence, and lastly you are illustrating you have the technical prowess to accomplish this. 
 
 ## Prerequisits: 
 
@@ -23,7 +23,7 @@ Today, more than ever, a website is like a business card. As a graduate student 
     - Don't have one? [Get one!](http://docs.railsbridge.org/installfest/create_a_github_account)
 - Working knowledge of RMarkdown. 
     - [What is RMarkdown](https://www.r-bloggers.com/r-markdown-and-knitr-tutorial-part-1/) you ask?
-- Temporarily narccessistic mindframe. 
+- Temporarily narcissistic mind-frame. 
 
 ## Goals: 
 
@@ -43,9 +43,9 @@ First things first, let's set up our github repository for hosting this site.
 
 __"Hosting this site"?__
 
-Whenever you go to a website, e.g. www.vanderbilt.edu, your computer is sending out a request across the series of tubes known as the internet to a server sitting on top of some cloud somewhere (aka Indiana) that it would like to look at Vanderbilt's website. That server, which is simply another computer, receives the request, then goes into its harddrive and pulls up the file it has stored for vanderbilt.com and sends that file back to your computer. So when we say "host your site" we simply mean we need to find a server to put your website's files on that will then deliver those sites to people who want to see them via their webbrowser of choice. 
+Whenever you go to a website, e.g. www.Vanderbilt.edu, your computer is sending out a request across the series of tubes known as the internet to a server sitting on top of some cloud somewhere (aka Indiana) that it would like to look at Vanderbilt's website. That server, which is simply another computer, receives the request, then goes into its hard-drive and pulls up the file it has stored for Vanderbilt.com and sends that file back to your computer. So when we say "host your site" we simply mean we need to find a server to put your website's files on that will then deliver those sites to people who want to see them via their web browser of choice. 
 
-This all sounds very complicated and expensive, and it used to be, but now computation is so cheap that companies literally give away server space to people all the time. One example of this is github. Everytime you host a repository on github it is stored on a server for access. 
+This all sounds very complicated and expensive, and it used to be, but now computation is so cheap that companies literally give away server space to people all the time. One example of this is github. Every time you host a repository on github it is stored on a server for access. 
 
 __Create Repo__
 
@@ -74,7 +74,7 @@ cd personal_site/  #<- Again, replace this with your own folder name
 git checkout -b gh-pages
 ```
 
-These commands navigate into your new repo, then make a new branch called `gh-pages` and enter it. This branch name is crutial so don't change it. It's what github looks for when deciding whether or not to host your site. 
+These commands navigate into your new repo, then make a new branch called `gh-pages` and enter it. This branch name is crucial so don't change it. It's what github looks for when deciding whether or not to host your site. 
 
 Okay good! Now we have a repo setup that allows us to host websites to it. Now let's actually get a website on it!
 
@@ -82,7 +82,7 @@ Okay good! Now we have a repo setup that allows us to host websites to it. Now l
 
 ## Start your Markdowns!
 
-First we do some administrative work to make sure we dont run into roadblocks on the way. Let's update our `rmarkdown` package to make sure we actually have the version that supports rmarkdown websites. 
+First we do some administrative work to make sure we don't run into roadblocks on the way. Let's update our `rmarkdown` package to make sure we actually have the version that supports RMarkdown websites. 
 
 ```{r, eval = FALSE}
 install.packages("rmarkdown", type = "source")
@@ -96,9 +96,9 @@ touch index.Rmd #Create the main rmd file
 touch about.Rmd #Create an about file
 ```
 
-Now open all of these files in rstudio. 
+Now open all of these files in RStudio. 
 
-We will start by filling out the `yml` file. `yml` files, while confusing looking at first, are basically a roadmap for R to know how to assemble your website. 
+We will start by filling out the `yml` file. `yml` files, while confusing looking at first, are basically a road-map for R to know how to assemble your website. 
 
 
 ___site.yml__
@@ -136,7 +136,7 @@ Why I am awesome.
 
 ## Let's build it!
 
-Okay, one last step to actually have a functioning website. We need to actually turn these seperate files into a single cohesive website. 
+Okay, one last step to actually have a functioning website. We need to actually turn these separate files into a single cohesive website. 
 
 To do this we are going to create one more file. This time just a plain r script. 
 
@@ -162,9 +162,9 @@ system("ditto _site/ .")
 #folder and copy all the files into the main level of your repo. 
 ```
 
-As a note, you could skip this step if you had started by creating an rstudio project, however, by doing it this way we are not dependent upon rstudio itself. This could be helpeful if in the future you are doing this on a computer without rStudio. It also helps explain the process a little bit more. 
+As a note, you could skip this step if you had started by creating an RStudio project, however, by doing it this way we are not dependent upon RStudio itself. This could be helpful if in the future you are doing this on a computer without RStudio. It also helps explain the process a little bit more. 
 
-Now if everything has gone according to plan, by running the code in `build_site.R` you should get a bunch of unintellegable output followed by the message : `Output created: _site/index.html`. If so, yay, if not, double check all the stuff above to make sure you followed it exactly. Or more likely I messed up and you should inform me. 
+Now if everything has gone according to plan, by running the code in `build_site.R` you should get a bunch of unintelligible output followed by the message : `Output created: _site/index.html`. If so, yay, if not, double check all the stuff above to make sure you followed it exactly. Or more likely I messed up and you should inform me. 
 
 Now we can open it up. Open the repository with `finder` or whatever tool your computer uses to look at files, then click on `index.html` and hopefully you should get something that looks like this. 
 
@@ -326,7 +326,7 @@ Well first off you add, commit, and push all your new fancy changes to github.
 
 Now you have a website that is better than 95% of people in your situation. What do you do now? 
 
-You never stop making it better! Every new project you get you do you post it to your projects page, get sick new headshots in? Add that to your about page. Customize it. For instance you may want to add a splash of personalization to your main page. Perhaps a nice chart? Ever made a plot in an rmarkdown before? You know how to do it then. 
+You never stop making it better! Every new project you get you do you post it to your projects page, get sick new head shots in? Add that to your about page. Customize it. For instance you may want to add a splash of personalization to your main page. Perhaps a nice chart? Ever made a plot in an RMarkdown before? You know how to do it then. 
 
 
 __index.Rmd__
@@ -347,7 +347,7 @@ $$Y = \alpha \cdot \sin(X), \alpha = 0,0.1,0.2,...,3$$
 
 __Learn More__
 
-If you want to learn more about what's possible using rmarkdown sites (and there is a lot), a good starting place is [this document](http://rmarkdown.rstudio.com/rmarkdown_websites.html) hosted by RStudio. This is where I got almost everything for this. 
+If you want to learn more about what's possible using RMarkdown sites (and there is a lot), a good starting place is [this document](http://rmarkdown.rstudio.com/rmarkdown_websites.html) hosted by RStudio. This is where I got almost everything for this. 
 
 __Style__
 
@@ -358,7 +358,7 @@ __Questions__
 If this tutorial was confusing or you don't know what words to use to search for new stuff feel free to contact us. 
 
 - Nick
-    - n.strayer at vanderbilt.edu
+    - n.strayer at Vanderbilt.edu
     - [twitter](https://twitter.com/NicholasStrayer)
     - [github](https://github.com/nstrayer)
 - Lucy
