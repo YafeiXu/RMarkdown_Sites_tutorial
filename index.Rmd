@@ -233,7 +233,7 @@ touch style.css
 Now open this file up in R and add the following lines: 
 
 __style.css__
-```{css, eval = FALSE}
+```
 img {
   width: 400px;
   display: block;
