@@ -178,7 +178,7 @@ Sweet. You have now created your own personal website. First let's push it to gi
 
 ## Git it hosted
 
-Now we just have to add commit and push everything to github. The one difference from normal is we have to make sure we are pushing to the gh-pages branch. 
+Now we just have to add commit and push everything to github. 
 
 ```{bash, eval=FALSE}
 #Let's add all the files to our git staging area
@@ -188,7 +188,7 @@ git add -A #the -A flag tells it git you want everything
 git commit -m "My first website commit. The begining of greatness"
 
 #Now we push. Note the addendum to normal pushing
-git push origin gh-pages
+git push origin master
 ```
 
 Now we can navigate to our hosted site! Open your browser of choice and go to `www.<your github name>.github.io/<your sites repo name>`. (E.g. `www.nstrayer.github.io/personal_site`). 
@@ -281,6 +281,7 @@ Again we edit the `_site.yml` file...
 ___site.yml__
 ```{r, eval = FALSE}
 name: "nicks-website"
+output_dir: "docs"
 navbar:
   title: "Nicks Website"
   left:
