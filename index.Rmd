@@ -53,7 +53,7 @@ Click the plus icon in the upper right corner of your github page and select `Ne
 
 ![](create_repo.png)
 
-Set up the repo how you like. In this case I am choosing "initialize repo with a README" so that I can just clone the empty repo to my computer and not bother with `git init`ing. But this is entirely up to you. If you have github you most likely already know how to do this. 
+Set up the repo how you like. In this case I am choosing "initialize repo with a README" so that I can just clone the empty repo to my computer and not bother with `git init`ing. But this is entirely up to you. If you have github you most likely already know how to do this. If you'd like this to be your main website, name this repo `yourgithubname.github.io` for example, Nick's would be `nstrayer.github.io`, Lucy's would be `lucymcgowan.github.io`, etc.
 
 ![](repo_info.png)
 
@@ -81,7 +81,7 @@ Now we need to let github know that we want it to look for files to host in our 
 
 Scroll down to the Github Pages section and click the drop down menu under "Source" and click "master branch". 
 
-![](docs_folder.png)
+![](master.png)
 
 Okay good! Now we have a repo setup that allows us to host websites to it. Now let's actually get a website on it!
 
@@ -161,7 +161,7 @@ __build_site.R__
 #working on at the time. 
 setwd("/Users/Nick/personal_site")
 
-#tender your sweet site. 
+#render your sweet site. 
 rmarkdown::render_site()
 ```
 
