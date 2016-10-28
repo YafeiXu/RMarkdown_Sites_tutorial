@@ -19,7 +19,7 @@ Today, more than ever, a website is like a business card. As a graduate student 
 
 ## Examples:
 
-- Check our Lucy's entirely made in RMarkdown [personal website](http://www.lucymcgowan.com/)! 
+- Check out Lucy's entirely made in RMarkdown [personal website](http://www.lucymcgowan.com/)! 
 - The sample website made in this tutorial is available [here](http://nickstrayer.me/personal_site/).
 
 ## Prerequisites: 
